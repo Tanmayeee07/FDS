@@ -1,0 +1,90 @@
+grp_a=["riya","shruti","vanya","ritika"]
+print("playing cricket =",grp_a)
+grp_b=["vanya","sam","sahil","ritika"]
+print("palynig badminton =",grp_b)
+grp_c=["riya","shruti","vanya","kavya"]
+print("playing football =",grp_c)
+
+print("------------------")
+lena=len(grp_a)
+lenb=len(grp_b)
+lenc=len(grp_c)
+grp_CB=[]
+if(lena<lenb):
+    for i in range(lena):
+        for var in range(lenb):
+            if(grp_a[i]==grp_b[var]):
+                grp_CB.append(grp_a[i])
+                break;
+else:
+    for i in range(lenb):
+        for var in range(lena):
+            if(grp_b[i]==grp_a[var]):
+                grp_CB.append(grp_b[i])
+                break;
+print("list of students play cricket and badminton =",grp_CB)
+
+grp_BC=[]
+flag=0
+if(lena<lenb):
+    for i in range(lenb):
+        for var in range(lena):
+            if(grp_b[i]==grp_a[var]):
+                flag=1
+        if(flag==0):
+            grp_BC.append(grp_b[i])
+        flag=0
+else:
+    for i in range(lena):
+        for var in range(lenb):
+            if(grp_a[i]==grp_b[var]):
+                flag=1
+        if(flag==0):
+            grp_BC.append(grp_a[i])
+        flag=0
+print("students play cricket or badminton =",grp_BC)
+
+
+grp_NCB=[]
+for i in range(lenc):
+    for var in range(lena):
+        if(grp_c[i]==grp_a[var]):
+            flag=1
+            break;
+    for var in range(lenb):
+        if(grp_c[i]==grp_b[var]):
+            flag=1
+            break;
+    if(flag==0):
+        grp_NCB.append(grp_c[i])
+    flag=0
+lenNCB=len(grp_NCB)
+print("students who play neither cricket nor badminton=",grp_NCB)
+
+
+grp_CF=[]
+if(lenc<lena):
+    for i in range(lenc):
+        for j in range(lena):
+            if(grp_c[i]==grp_a[j]):
+                grp_CF.append(grp_c[i])
+                break;
+else:
+    for i in range(lena):
+        for j in range(lenc):
+            if(grp_a[i]==grp_c[j]):
+                grp_CF.append(grp_a[i])
+                break;
+lenCF=len(grp_CF)
+
+grp_CFNB=[]
+flag=0
+for i in range(lenCF):
+    for j in range(lenb):
+        if(grp_CF[i]==grp_b[j]):
+            flag=1
+            break;
+    if(flag==0):
+        grp_CFNB.append(grp_CF[i])
+    flag=0;
+print("students who play cricket and football not badminton =",grp_CFNB)
